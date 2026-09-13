@@ -1,0 +1,97 @@
+{
+	"name": "ds_raw_file",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_datalake",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"file_name": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().file_name",
+					"type": "Expression"
+				},
+				"fileSystem": "raw"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Maker",
+				"type": "String"
+			},
+			{
+				"name": "Genmodel",
+				"type": "String"
+			},
+			{
+				"name": "Genmodel_ID",
+				"type": "String"
+			},
+			{
+				"name": "Adv_ID",
+				"type": "String"
+			},
+			{
+				"name": "Adv_year",
+				"type": "String"
+			},
+			{
+				"name": "Adv_month",
+				"type": "String"
+			},
+			{
+				"name": "Color",
+				"type": "String"
+			},
+			{
+				"name": "Reg_year",
+				"type": "String"
+			},
+			{
+				"name": "Bodytype",
+				"type": "String"
+			},
+			{
+				"name": "Runned_Miles",
+				"type": "String"
+			},
+			{
+				"name": "Engin_size",
+				"type": "String"
+			},
+			{
+				"name": "Gearbox",
+				"type": "String"
+			},
+			{
+				"name": "Fuel_type",
+				"type": "String"
+			},
+			{
+				"name": "Price",
+				"type": "String"
+			},
+			{
+				"name": "Seat_num",
+				"type": "String"
+			},
+			{
+				"name": "Door_num",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
